@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>UltriREST – SaaS para gestión de restaurantes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Centraliza pedidos, inventario, mesas y cocina en un solo panel. Optimiza tu restaurante con RestoFlow."
+  />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pequeño glow animado */
+    .glow {
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-400/50">
+          <span class="text-lg font-bold text-cyan-400">UR</span>
+        </div>
+        <div class="leading-tight">
+          <p class="font-semibold tracking-tight">UltriREST</p>
+          <p class="text-xs text-slate-400">Gestión inteligente de restaurantes</p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="hidden items-center gap-8 text-sm text-slate-200 md:flex">
+        <a href="#beneficios" class="hover:text-cyan-300 transition">Beneficios</a>
+        <a href="#funciona" class="hover:text-cyan-300 transition">Cómo funciona</a>
+        <a href="#caracteristicas" class="hover:text-cyan-300 transition">Módulos</a>
+        <a href="#precios" class="hover:text-cyan-300 transition">Planes</a>
+        <a href="#faq" class="hover:text-cyan-300 transition">FAQs</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="#contacto"
+          class="hidden rounded-full border border-slate-700 px-4 py-2 text-xs font-medium text-slate-200 hover:border-cyan-400 hover:text-cyan-300 md:inline-block transition">
+          Ver demo
+        </a>
+        <a href="#contacto"
+          class="rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-cyan-400 transition">
+          Solicitar implementación
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <!-- Gradiente de fondo -->
+      <div class="pointer-events-none absolute inset-0 opacity-40">
+        <div class="absolute left-1/2 top-[-10%] h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500 blur-3xl"></div>
+        <div class="absolute left-[10%] bottom-[-10%] h-72 w-72 rounded-full bg-emerald-500 blur-3xl"></div>
+        <div class="absolute right-[5%] bottom-[5%] h-72 w-72 rounded-full bg-sky-600 blur-3xl"></div>
+      </div>
+
+      <div class="relative mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 md:flex-row md:items-center md:py-24">
+        <!-- Copy -->
+        <div class="max-w-xl space-y-6">
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-[11px] font-medium text-slate-200">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+            SaaS para gestión interna de restaurantes
+          </span>
+
+          <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+            Controla tu
+            <span class="bg-gradient-to-r from-cyan-300 via-sky-400 to-emerald-300 bg-clip-text text-transparent">
+              restaurante
+            </span>
+            desde un solo lugar.
+          </h1>
+
+          <p class="text-sm leading-relaxed text-slate-300 sm:text-base">
+            UltriREST centraliza pedidos, mesas, cocina e inventario en un panel
+            intuitivo. Menos caos, menos papel, menos errores. Más control, más
+            ventas y clientes más felices.
+          </p>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="#contacto"
+              class="glow inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-2.5 text-sm font-semibold text-slate-950 hover:bg-cyan-400 transition">
+              Agendar demo gratuita
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                  d="M5 12h14m0 0-5-5m5 5-5 5" />
+              </svg>
+            </a>
+            <button
+              onclick="document.getElementById('funciona').scrollIntoView({behavior:'smooth'})"
+              class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs font-medium text-slate-200 hover:border-cyan-400 hover:text-cyan-200 transition">
+              Ver cómo funciona
+            </button>
+          </div>
+
+          <div class="flex flex-wrap gap-6 pt-4 text-xs text-slate-400">
+            <div>
+              <p class="font-semibold text-slate-200">–15% tiempo en sala</p>
+              <p>Meseros más rápidos, menos tiempo de espera.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-200">–20% merma de inventario</p>
+              <p>Control automático por plato e ingrediente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- “Mockup” / Vista previa del SaaS -->
+        <div
+          class="glow relative mx-auto w-full max-w-md rounded-3xl border border-slate-700/80 bg-slate-900/80 p-4 shadow-2xl backdrop-blur md:max-w-sm">
+          <!-- Top bar -->
+          <div class="mb-3 flex items-center justify-between">
+            <div class="flex gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-red-500/80"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+            </div>
+            <span class="rounded-full bg-slate-800 px-3 py-1 text-[10px] font-medium text-slate-300">
+              Panel • Admin
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="space-y-4 text-xs">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-semibold text-slate-100">Mesa 14 • 3 comensales</p>
+              <span class="rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] text-emerald-300">En preparación</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="rounded-2xl bg-slate-800/80 p-3">
+                <p class="font-semibold text-slate-100">Pedidos en curso</p>
+                <p class="text-2xl font-bold text-cyan-300">12</p>
+                <p class="mt-1 text-[10px] text-emerald-300">+4 hoy</p>
+              </div>
+              <div class="rounded-2xl bg-slate-800/80 p-3">
+                <p class="font-semibold text-slate-100">Stock platos</p>
+                <p class="text-2xl font-bold text-amber-300">92%</p>
+                <p class="mt-1 text-[10px] text-amber-200">Alertas de 3 ingredientes</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 rounded-2xl bg-slate-800/80 p-3">
+              <div class="flex items-center justify-between">
+                <p class="text-[11px] font-semibold text-slate-100">Cocina</p>
+                <span class="rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] text-cyan-300">Vista en tiempo real</span>
+              </div>
+              <div class="space-y-1 text-[11px]">
+                <div class="flex items-center justify-between">
+                  <span>Sushi Mixto x2</span>
+                  <span class="text-emerald-300">Listo</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Hamburguesa Doble</span>
+                  <span class="text-amber-300">En preparación</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Pasta Alfredo</span>
+                  <span class="text-sky-300">En cola</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="pt-1 text-[10px] text-slate-500">
+              *Imagen de referencia de cómo verán el panel meseros, cocina y administración.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="border-y border-slate-800/80 bg-slate-950/80">
+      <div class="mx-auto max-w-6xl px-4 py-16">
+        <div class="mb-10 max-w-2xl">
+          <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Beneficios directos para tu restaurante</h2>
+          <p class="mt-3 text-sm text-slate-300">
+            No es solo “otro sistema”. Es una plataforma pensada para el día a día:
+            meseros corriendo, comandas, clientes esperando, cocina llena y stock
+            que se agota.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-cyan-300">Menos errores, más orden</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Pedidos claros y centralizados: mesero, cocina y caja ven exactamente lo
+              mismo. Se reducen confusiones, platos equivocados y pérdidas.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-emerald-300">Control real del inventario</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Cada plato descuenta ingredientes automáticamente al completar el pedido.
+              Evitas vender algo sin stock y reducen mermas.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-amber-300">Experiencia del cliente</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Menos tiempos muertos, menos “ya no hay ese plato”, más organización.
+              Tu servicio mejora y se nota en la propina y en reseñas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="funciona" class="mx-auto max-w-6xl px-4 py-16">
+      <div class="mb-10 max-w-2xl">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">¿Cómo funciona UltriREST en tu operación diaria?</h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Lo conectamos con la forma en la que ya trabajas: mesas, meseros, cocina
+          y administrador. No necesitas ser experto en tecnología.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-4">
+        <div class="space-y-2">
+          <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-xs font-bold text-cyan-300">
+            1
+          </div>
+          <p class="text-sm font-semibold">Configuración inicial</p>
+          <p class="text-xs text-slate-300">
+            Cargamos tu menú, definimos mesas, usuarios (meseros, cocina, admin)
+            y configuramos inventario por ingrediente.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-xs font-bold text-cyan-300">
+            2
+          </div>
+          <p class="text-sm font-semibold">Toma de pedidos</p>
+          <p class="text-xs text-slate-300">
+            El mesero toma el pedido desde el sistema, ve stock disponible del plato
+            y envía directo a cocina. Se evita anotar en papel.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-xs font-bold text-cyan-300">
+            3
+          </div>
+          <p class="text-sm font-semibold">Cocina y control</p>
+          <p class="text-xs text-slate-300">
+            La cocina marca pedidos como “en preparación” o “listo”. Al finalizar,
+            el sistema descuenta ingredientes del inventario automáticamente.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-xs font-bold text-cyan-300">
+            4
+          </div>
+          <p class="text-sm font-semibold">Reportes y decisiones</p>
+          <p class="text-xs text-slate-300">
+            El administrador ve ventas, platos más pedidos, consumo de insumos
+            y alertas de stock para comprar a tiempo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULOS / CARACTERÍSTICAS -->
+    <section id="caracteristicas" class="border-y border-slate-800 bg-slate-950/70">
+      <div class="mx-auto max-w-6xl px-4 py-16">
+        <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Todo lo que tu restaurante necesita</h2>
+            <p class="mt-3 text-sm text-slate-300">
+              Módulos pensados para la operación diaria, no solo para generar informes
+              al final del mes.
+            </p>
+          </div>
+          <p class="max-w-sm text-xs text-slate-400">
+            Accesible desde cualquier dispositivo con navegador (PC, tablet, portátil).
+            Sin instalaciones complicadas.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-sky-300">Módulo de Mesas y Pedidos</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Visualiza el estado de cada mesa (ocupada, libre, esperando cuenta) y
+              los pedidos asociados. Ideal para el jefe de salón.
+            </p>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-emerald-300">Módulo de Cocina</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Vista clara de platos en cola, en preparación y listos. Orden por
+              tiempo, prioridad y mesa. Menos gritos, más organización.
+            </p>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-amber-300">Inventario e Insumos</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Asocia cada plato a sus ingredientes. Cuando cocina completa un pedido,
+              el sistema descuenta el consumo real del stock.
+            </p>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-fuchsia-300">Reportes y Analytics</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Platos más vendidos, horarios fuertes, insumos críticos y proyección
+              de compras. Decisiones con datos, no con suposiciones.
+            </p>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-lime-300">Roles y permisos</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Diferentes vistas para meseros, cocina y administración. Cada uno ve
+              solo lo que necesita para trabajar.
+            </p>
+          </div>
+
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-sm font-semibold text-cyan-300">Soporte y capacitación</p>
+            <p class="mt-2 text-sm text-slate-300">
+              Acompañamiento en la adopción: capacitación rápida a tu equipo y
+              soporte para ajustes a tu operación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES / PRECIOS -->
+    <section id="precios" class="mx-auto max-w-6xl px-4 py-16">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Planes pensados para tu realidad</h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Desde restaurantes pequeños hasta cadenas con varios puntos. Puedes
+          empezar simple e ir creciendo.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- Plan 1 -->
+        <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Starter</p>
+          <p class="mt-2 text-lg font-bold text-slate-50">1 sede</p>
+          <p class="mt-1 text-xs text-slate-400">Ideal para restaurantes pequeños.</p>
+          <p class="mt-4 text-3xl font-extrabold text-cyan-300">
+            $•••
+            <span class="text-xs font-normal text-slate-400">/mes</span>
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li>• Módulo de mesas y pedidos</li>
+            <li>• Módulo de cocina</li>
+            <li>• Inventario básico por ingrediente</li>
+            <li>• Soporte por chat / correo</li>
+          </ul>
+          <a href="#contacto"
+            class="mt-6 inline-flex items-center justify-center rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-300 transition">
+            Quiero este plan
+          </a>
+        </div>
+
+        <!-- Plan 2 (Recomendado) -->
+        <div
+          class="flex flex-col rounded-2xl border border-cyan-500 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 glow">
+          <p class="text-xs font-semibold uppercase tracking-wide text-emerald-300">Recomendado</p>
+          <p class="mt-2 text-lg font-bold text-slate-50">Crecimiento</p>
+          <p class="mt-1 text-xs text-slate-300">Para restaurantes en expansión.</p>
+          <p class="mt-4 text-3xl font-extrabold text-emerald-300">
+            $•••
+            <span class="text-xs font-normal text-slate-200">/mes</span>
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-slate-100">
+            <li>• Todo lo del plan Starter</li>
+            <li>• Reportes avanzados y analytics</li>
+            <li>• Alertas automáticas de stock</li>
+            <li>• Soporte prioritario</li>
+          </ul>
+          <a href="#contacto"
+            class="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-300 transition">
+            Hablar con ventas
+          </a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Empresa</p>
+          <p class="mt-2 text-lg font-bold text-slate-50">Multi-sede</p>
+          <p class="mt-1 text-xs text-slate-400">Para cadenas y grupos gastronómicos.</p>
+          <p class="mt-4 text-3xl font-extrabold text-cyan-300">
+            A medida
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li>• Múltiples sedes y usuarios</li>
+            <li>• Integraciones a medida</li>
+            <li>• Onboarding dedicado</li>
+            <li>• Soporte y SLAs personalizados</li>
+          </ul>
+          <a href="#contacto"
+            class="mt-6 inline-flex items-center justify-center rounded-full border border-slate-700 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-300 transition">
+            Solicitar propuesta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS / IMPACTO -->
+    <section class="border-y border-slate-800 bg-slate-950/80">
+      <div class="mx-auto max-w-6xl px-4 py-16">
+        <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Restaurantes que ya dieron el salto</h2>
+            <p class="mt-3 text-sm text-slate-300">
+              Historias reales de equipos que pasaron del caos del papel a un
+              flujo de trabajo organizado.
+            </p>
+          </div>
+          <div class="flex gap-8 text-xs text-slate-400">
+            <div>
+              <p class="text-lg font-bold text-cyan-300">–20%</p>
+              <p>Tiempo promedio de servicio</p>
+            </div>
+            <div>
+              <p class="text-lg font-bold text-emerald-300">–25%</p>
+              <p>Pérdida por mala gestión de inventario</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs text-slate-300">
+            <p>
+              “Antes teníamos comandas en papel pegadas por todo lado. Ahora
+              cocina, meseros y caja hablan el mismo idioma. El cambio se nota
+              en la operación y en los clientes.”
+            </p>
+            <p class="mt-3 font-semibold text-slate-100">– Dueño de restaurante casual</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs text-slate-300">
+            <p>
+              “El control de inventario por ingrediente nos permitió entender
+              qué platos realmente nos dejan margen y cuáles no.”
+            </p>
+            <p class="mt-3 font-semibold text-slate-100">– Administrador de cocina</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 text-xs text-slate-300">
+            <p>
+              “El equipo se adaptó rápido porque la interfaz es limpia y está
+              pensada para el día a día, no para llenar formularios eternos.”
+            </p>
+            <p class="mt-3 font-semibold text-slate-100">– Gerente operativo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mx-auto max-w-6xl px-4 py-16">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Preguntas frecuentes</h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Si tienes dudas específicas de tu operación, puedes agendar una demo
+          y lo revisamos juntos.
+        </p>
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-200">
+        <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <summary class="cursor-pointer font-semibold">
+            ¿Necesito comprar equipos nuevos para usar RestoFlow?
+          </summary>
+          <p class="mt-2 text-xs text-slate-300">
+            No necesariamente. Funciona en navegadores modernos, por lo que
+            puedes usar PCs, portátiles o tablets Android / iPad. Revisamos
+            contigo qué tienes actualmente.
+          </p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <summary class="cursor-pointer font-semibold">
+            ¿Cuánto tiempo tarda la implementación?
+          </summary>
+          <p class="mt-2 text-xs text-slate-300">
+            Depende del tamaño del menú y número de sedes, pero en muchos casos
+            puedes estar operando en pocos días con tu equipo ya capacitado.
+          </p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <summary class="cursor-pointer font-semibold">
+            ¿Qué pasa si se cae internet?
+          </summary>
+          <p class="mt-2 text-xs text-slate-300">
+            Podemos revisar contigo opciones de redundancia (doble proveedor,
+            data móvil, etc.) y diseñar un plan de contingencia según tu
+            realidad. Hablémoslo en la demo.
+          </p>
+        </details>
+
+        <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+          <summary class="cursor-pointer font-semibold">
+            ¿Puedo pedir funciones a la medida?
+          </summary>
+          <p class="mt-2 text-xs text-slate-300">
+            Sí. Para planes empresariales trabajamos requerimientos a medida,
+            integraciones y reportes específicos.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACTO / DEMO -->
+ <!-- CONTACTO / DEMO -->
+<section id="contacto" class="border-y border-slate-800 bg-slate-950/80">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid gap-8 md:grid-cols-2 md:items-center">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">
+          Agenda una demo y revisamos tu restaurante juntos
+        </h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Cuéntanos cuántas mesas manejas, cuántas personas tiene tu equipo
+          y qué problemas quieres solucionar. Te mostraremos cómo UltriREST
+          encaja en tu operación.
+        </p>
+
+        <ul class="mt-4 space-y-2 text-xs text-slate-300">
+          <li>• Diagnóstico rápido de tu operación actual.</li>
+          <li>• Demo guiada del panel para meseros, cocina y administración.</li>
+          <li>• Propuesta de implementación y tiempos estimados.</li>
+        </ul>
+      </div>
+
+      <!-- Formulario -->
+      <form class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 space-y-4" onsubmit="enviarDemo(event)">
+        <div>
+          <label class="text-xs font-medium text-slate-200">Nombre y cargo</label>
+          <input
+            id="nombre_cargo"
+            type="text"
+            placeholder="Ej: Carlos López – Gerente"
+            class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-100 outline-none focus:border-cyan-400"
+          />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-slate-200">Correo electrónico</label>
+          <input
+            id="correo"
+            type="email"
+            placeholder="tu@restaurante.com"
+            class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-100 outline-none focus:border-cyan-400"
+          />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-slate-200">Nombre del restaurante</label>
+          <input
+            id="restaurante"
+            type="text"
+            placeholder="Nombre del restaurante"
+            class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-100 outline-none focus:border-cyan-400"
+          />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-slate-200">Mensaje</label>
+          <textarea
+            id="mensaje"
+            rows="3"
+            placeholder="Cuéntanos brevemente tu situación actual y qué te gustaría mejorar..."
+            class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-100 outline-none focus:border-cyan-400"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-cyan-400 transition">
+          Enviar solicitud de demo
+        </button>
+        <p class="text-[10px] text-slate-500">
+          Al enviar este formulario, se abrirá tu aplicación de correo para enviar la solicitud de demo.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 py-6">
+    <div class="mx-auto flex max-w-6xl flex-col justify-between gap-3 px-4 text-xs text-slate-500 md:flex-row md:items-center">
+      <p>© <span id="year"></span> UltriaTech. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="#contacto" class="hover:text-cyan-300 transition">Contacto</a>
+        <span class="text-slate-700">•</span>
+        <span>Hecho para restaurantes que quieren orden y control.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+  // Año dinámico en el footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function enviarDemo(e) {
+    e.preventDefault();
+
+    const nombreCargo = document.getElementById('nombre_cargo').value || '(sin nombre)';
+    const correo = document.getElementById('correo').value || '(sin correo)';
+    const restaurante = document.getElementById('restaurante').value || '(sin restaurante)';
+    const mensaje = document.getElementById('mensaje').value || '';
+
+    const to = "contacto@ultriatech.com"; // <-- tu correo de recepción
+    const subject = `Solicitud de demo UltriREST – ${restaurante}`;
+    const body =
+`Nombre y cargo: ${nombreCargo}
+Correo: ${correo}
+Restaurante: ${restaurante}
+
+Mensaje:
+${mensaje}`;
+
+    const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  }
+</script>
+</body>
+</html>
