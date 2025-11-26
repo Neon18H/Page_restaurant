@@ -1,11 +1,14 @@
-FROM nginx:alpine
+FROM node:20-alpine
 
-# Copia tu HTML estático a la carpeta pública de Nginx
-COPY index.html /usr/share/nginx/html/index.html
+# Carpeta de trabajo
+WORKDIR /app
 
-# (Opcional) si luego tienes más archivos:
-# COPY . /usr/share/nginx/html
+# Copiamos todos los archivos (index.html, etc.)
+COPY . .
 
-EXPOSE 80
+# Servidor estático super simple
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+# Railway pone la variable PORT automáticamente.
+# Si por alguna razón no existe, usamos 3000 por defecto.
+CMD ["sh", "-c", "serve -s . -l ${PORT:-3000}"]
